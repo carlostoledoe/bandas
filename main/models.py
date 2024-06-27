@@ -21,5 +21,5 @@ class ArtistaGrupo(models.Model):
     artista = models.ForeignKey(Artista, on_delete=models.CASCADE)
     grupo = models.ForeignKey(Grupo, on_delete=models.CASCADE)
     fecha_ingreso = models.DateField()
-    creacion_registro = models.DateField()
+    creacion_registro = models.DateField(auto_now_add=True)
     agregado_por = models.CharField(max_length=50)
