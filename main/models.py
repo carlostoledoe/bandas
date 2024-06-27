@@ -15,7 +15,7 @@ class Grupo(models.Model):
 class Album(models.Model):
     titulo = models.CharField(max_length=50)
     year = models.IntegerField()
-    grupo = models.ForeignKey(Grupo, on_delete=models.CASCADE)
+    grupo = models.ForeignKey(Grupo,  related_name='albumes', on_delete=models.CASCADE)
 
 class ArtistaGrupo(models.Model):
     artista = models.ForeignKey(Artista, on_delete=models.CASCADE)
