@@ -12,7 +12,7 @@ class Artista(models.Model):
 class Grupo(models.Model):
     nombre = models.CharField(max_length=50)
     fecha_creacion = models.DateField()
-    artista = models.ManyToManyField(Artista, related_name='grupos', through='ArtistaGrupo')
+    artistas = models.ManyToManyField(Artista, related_name='grupos', through='ArtistaGrupo')
     def __str__(self) -> str:
         return f'{self.nombre}'
 
